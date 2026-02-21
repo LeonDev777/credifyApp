@@ -6,10 +6,10 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "display_override": ["standalone", "fullscreen", "minimal-ui"],
+  "display_override": ["standalone", "fullscreen"],
   "orientation": "portrait",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "categories": ["finance", "productivity"],
   "lang": "pt-BR",
   "dir": "ltr",
@@ -25,29 +25,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "https://cdn-icons-png.flaticon.com/512/584/584067.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Credify Dashboard"
-    },
-    {
-      "src": "https://cdn-icons-png.flaticon.com/512/584/584067.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Credify Mobile"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Nova Cobrança",
-      "url": "/?screen=create",
-      "description": "Adicionar nova dívida rapidamente"
     }
   ]
 }
