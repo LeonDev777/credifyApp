@@ -2,10 +2,12 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="theme-color" content="#0f172a">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-alpha">
+    <meta name="apple-mobile-web-app-title" content="Credify">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="description" content="Gestão moderna de dívidas e cobranças com juros automáticos.">
     
     <!-- PWA Icons & Manifest -->
@@ -17,9 +19,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        :root {
+            --sat: env(safe-area-inset-top);
+            --sar: env(safe-area-inset-right);
+            --sab: env(safe-area-inset-bottom);
+            --sal: env(safe-area-inset-left);
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F3F4F6;
+            background-color: #0f172a; 
             margin: 0;
             padding: 0;
             -webkit-tap-highlight-color: transparent;
@@ -27,16 +35,20 @@
             justify-content: center;
             overflow: hidden;
             height: 100vh;
+            /* Suporte para safe areas (notches de celulares) */
+            padding-top: var(--sat);
+            padding-bottom: var(--sab);
         }
         #root {
             width: 100%;
             display: flex;
             justify-content: center;
+            background-color: #F3F4F6;
         }
         .mobile-container {
             width: 100%;
             max-width: 480px;
-            height: 100vh;
+            height: 100%;
             background-color: #FFFFFF;
             box-shadow: 0 0 40px rgba(0,0,0,0.1);
             position: relative;
@@ -46,6 +58,16 @@
         }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Previne seleção de texto indesejada para parecer app nativo */
+        * {
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        input, textarea {
+            -webkit-user-select: text;
+            user-select: text;
+        }
     </style>
 <script type="importmap">
 {
@@ -59,7 +81,6 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div id="root"></div>
